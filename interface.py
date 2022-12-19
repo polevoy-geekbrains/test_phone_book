@@ -1,6 +1,8 @@
 import time
 
 def error_input():
+    '''вывод ошибки'''
+
     print('Будьте внимательны! Что-то пошло не так!')
     print('Введите соответствующую команду!')
     time.sleep(1)
@@ -19,17 +21,23 @@ main_menu = \
     7. Выход'
 
 def start_page(): 
+    '''вывод гллавного меню'''
+
     print(main_menu)
     print()
     command = input('Выберите действие: ')
     return command
 
 def search_contact():
+    ''' поиск контакта'''
+
     search_request = input('Введите данные для поиска: ')
     print(50 * "=")
     return search_request
 
 def add_contact():
+    '''добавление контакта'''
+
     print('Добавление контакта: ')
     print(50 * "-")
     contact_surname = input('Введите фамилию: ')  
@@ -41,12 +49,18 @@ def add_contact():
     return contact 
 
 def change_contact():
+
+    ''' ввлд контакта для редактирования или удаления'''
+
     print('Изменить контакт: ')
     print(50 * "~")
     contact_id = input('Выберите контакт для внесения изменений: ')
     return int(contact_id)
 
 def change_contact_content(one_contact):
+
+    ''' редактирование контакта'''
+
     while True:
         menu_command = input('Что необходимо сделать?\n 1 - Редактировать контакт \n 2 - Удалить контакт\n')
         if menu_command == '1':
@@ -88,18 +102,27 @@ def bye_mess():
     print('Работа закончена!')
 
 def import_contacts():
+
+    '''импорт контактов из файла'''
+
     print('Импорт контактов: ')
     print('Выберите формат файла для импорта: ')
     import_type = input('1. import_phonebook.csv\n2. import_phonebook.json\n')
     return import_type
 
 def export_contacts():
+
+    '''экспорт котактов в файл'''
+
     print('Экспорт контактов: ')
     print('Выыберите формат файла для экпорта: ')
     export_type = input('csv\njson\n')
     return export_type
 
 def show_contacts(data):  
+
+    '''вывод в консоль всего списка контактов'''
+    
     if data != []:
         print(50 * "*")
         print('Список всех контактов: ')
@@ -112,7 +135,6 @@ def show_contacts(data):
             print(f'{a}) {b} {c}. {d}. {e}.')
     else:
         print('Список контактов пуст')
-    print()
 
 def result_mess(done):
     if done:
